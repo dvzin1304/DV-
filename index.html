@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DV - Loja de roupas femininas e masculinas. Veja as peças e converse com nossa assistente virtual.">
+  <title>DV | Loja de Roupas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Desenhos reutilizáveis das peças (as cores vêm de cada produto) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+
+    <symbol id="camiseta" viewBox="0 0 200 200">
+      <path d="M62 28 L90 18 Q100 36 110 18 L138 28 L182 62 L160 90 L142 78 L142 178 L58 178 L58 78 L40 90 L18 62 Z"
+            fill="var(--peca)" stroke="rgba(0,0,0,0.12)" stroke-width="1.5" stroke-linejoin="round"/>
+      <text x="100" y="82" text-anchor="middle" font-family="Georgia, serif" font-size="20"
+            font-weight="700" letter-spacing="3" fill="var(--detalhe)">DV</text>
+    </symbol>
+
+    <symbol id="camisa" viewBox="0 0 200 200">
+      <path d="M62 28 L88 20 L100 44 L112 20 L138 28 L182 62 L160 90 L142 78 L142 178 L58 178 L58 78 L40 90 L18 62 Z"
+            fill="var(--peca)" stroke="rgba(0,0,0,0.12)" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M88 20 L100 44 L112 20" fill="none" stroke="var(--detalhe)" stroke-width="2.5" stroke-linejoin="round"/>
+      <line x1="100" y1="44" x2="100" y2="178" stroke="var(--detalhe)" stroke-width="2"/>
+      <circle cx="100" cy="70" r="2.8" fill="var(--detalhe)"/>
+      <circle cx="100" cy="100" r="2.8" fill="var(--detalhe)"/>
+      <circle cx="100" cy="130" r="2.8" fill="var(--detalhe)"/>
+      <circle cx="100" cy="160" r="2.8" fill="var(--detalhe)"/>
+    </symbol>
+
+    <symbol id="calca" viewBox="0 0 200 200">
+      <path d="M60 20 L140 20 L150 184 L108 184 L100 84 L92 184 L50 184 Z"
+            fill="var(--peca)" stroke="rgba(0,0,0,0.12)" stroke-width="1.5" stroke-linejoin="round"/>
+      <line x1="60" y1="33" x2="140" y2="33" stroke="var(--detalhe)" stroke-width="2.5"/>
+      <line x1="100" y1="33" x2="100" y2="84" stroke="var(--detalhe)" stroke-width="2"/>
+    </symbol>
+
+    <symbol id="short" viewBox="0 0 200 200">
+      <path d="M58 36 L142 36 L154 136 L108 136 L100 88 L92 136 L46 136 Z"
+            fill="var(--peca)" stroke="rgba(0,0,0,0.12)" stroke-width="1.5" stroke-linejoin="round"/>
+      <line x1="58" y1="49" x2="142" y2="49" stroke="var(--detalhe)" stroke-width="2.5"/>
+      <line x1="100" y1="49" x2="100" y2="88" stroke="var(--detalhe)" stroke-width="2"/>
+    </symbol>
+
+    <symbol id="casaco" viewBox="0 0 200 200">
+      <path d="M70 26 L100 38 L130 26 L172 50 L186 156 L160 160 L150 98 L148 178 L52 178 L50 98 L40 160 L14 156 L28 50 Z"
+            fill="var(--peca)" stroke="rgba(0,0,0,0.12)" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M70 26 L100 62 L130 26" fill="none" stroke="var(--detalhe)" stroke-width="2.5" stroke-linejoin="round"/>
+      <line x1="100" y1="62" x2="100" y2="178" stroke="var(--detalhe)" stroke-width="2.5"/>
+      <line x1="64" y1="140" x2="82" y2="140" stroke="var(--detalhe)" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="118" y1="140" x2="136" y2="140" stroke="var(--detalhe)" stroke-width="2.5" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="vestido" viewBox="0 0 200 200">
+      <path d="M80 18 L90 18 Q100 38 110 18 L120 18 L126 84 L164 184 L36 184 L74 84 Z"
+            fill="var(--peca)" stroke="rgba(0,0,0,0.12)" stroke-width="1.5" stroke-linejoin="round"/>
+      <line x1="74" y1="84" x2="126" y2="84" stroke="var(--detalhe)" stroke-width="2.5"/>
+      <line x1="44" y1="172" x2="156" y2="172" stroke="var(--detalhe)" stroke-width="1.8"/>
+    </symbol>
+
+  </svg>
+
+  <!-- ===== CABEÇALHO ===== -->
+  <header class="cabecalho">
+    <div class="cabecalho-conteudo">
+      <span class="logo-emoji" aria-hidden="true">👗</span>
+      <h1 class="logo-nome">DV</h1>
+      <p class="logo-slogan">Moda feminina &amp; masculina com estilo</p>
+
+      <ul class="categorias" aria-label="Categorias da loja">
+        <li>👔 Camisas</li>
+        <li>👗 Vestidos</li>
+        <li>👖 Calças</li>
+        <li>🩳 Shorts</li>
+        <li>🧥 Casacos</li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== CARTÃO CENTRAL ===== -->
+  <main class="principal">
+    <section class="cartao">
+      <span class="selo">● Atendimento online</span>
+
+      <div class="cartao-emoji" aria-hidden="true">🛍️</div>
+
+      <h2 class="cartao-titulo">Encontre o seu look com a assistente da DV!</h2>
+
+      <p class="cartao-texto">
+        Responda a algumas perguntas rápidas e receba sugestões de peças
+        pensadas para você: estilo, tamanho, ocasião e faixa de preço.
+      </p>
+
+      <ol class="passos">
+        <li><span class="passo-numero">1</span> Conte seu estilo</li>
+        <li><span class="passo-numero">2</span> Escolha tamanho e ocasião</li>
+        <li><span class="passo-numero">3</span> Receba as sugestões</li>
+      </ol>
+
+      <!-- Troque o link abaixo pelo link do SEU bot criado no Landbot -->
+      <a class="botao" href="https://landbot.online/v3/H-3536914-SY8MBRNJBAKNZLSP/index.html" target="_blank" rel="noopener">
+        Falar com a assistente 👗
+      </a>
+
+      <p class="cartao-nota">⏱️ Leva menos de 2 minutos</p>
+    </section>
+  </main>
+
+  <!-- ===== VITRINE DE PRODUTOS ===== -->
+  <section class="vitrine" aria-labelledby="vitrine-titulo">
+    <div class="vitrine-topo">
+      <h2 id="vitrine-titulo">Nossas peças</h2>
+      <p>As mesmas opções que você escolhe na conversa com a assistente</p>
+    </div>
+
+    <!-- Para usar foto de verdade, troque o <svg> por:
+         <img src="imagens/nome-da-foto.jpg" alt="descrição da peça"> -->
+
+    <!-- ----- MASCULINO ----- -->
+    <h3 class="grupo-titulo">👔 Masculino</h3>
+    <div class="produtos">
+
+      <article class="produto">
+        <div class="produto-imagem" style="--peca:#bcd4ea; --detalhe:#27408b;">
+          <svg class="peca-desenho" role="img" aria-label="Camisa azul clara"><use href="#camisa"/></svg>
+          <button class="favorito" type="button" aria-label="Favoritar">♡</button>
+        </div>
+        <ul class="cores" aria-label="Cores disponíveis">
+          <li style="background:#bcd4ea"></li><li style="background:#ffffff"></li><li style="background:#222222"></li>
+        </ul>
+        <h4 class="produto-nome">Camisa DV Social Masculina</h4>
+        <p class="produto-tipo">Camisa</p>
+        <p class="preco"><strong>R$ 79,90 no Pix</strong> <s>R$ 149,99</s> <span class="desconto">47% off</span></p>
+        <p class="nota"><span class="estrelas">★★★★★</span> <span class="nota-numero">4.7</span></p>
+      </article>
+
+      <article class="produto">
+        <div class="produto-imagem" style="--peca:#3b5b92; --detalhe:#c9a14a;">
+          <svg class="peca-desenho" role="img" aria-label="Calça jeans"><use href="#calca"/></svg>
+          <button class="favorito" type="button" aria-label="Favoritar">♡</button>
+        </div>
+        <ul class="cores" aria-label="Cores disponíveis">
+          <li style="background:#3b5b92"></li><li style="background:#222222"></li>
+        </ul>
+        <h4 class="produto-nome">Calça DV Jeans Masculina</h4>
+        <p class="produto-tipo">Calça</p>
+        <p class="preco"><strong>R$ 119,90 no Pix</strong> <s>R$ 199,90</s> <span class="desconto">40% off</span></p>
+        <p class="nota"><span class="estrelas">★★★★★</span> <span class="nota-numero">4.6</span></p>
+      </article>
+
+      <article class="produto">
+        <div class="produto-imagem" style="--peca:#b99b6b; --detalhe:#8a6a1f;">
+          <svg class="peca-desenho" role="img" aria-label="Short bege"><use href="#short"/></svg>
+          <button class="favorito" type="button" aria-label="Favoritar">♡</button>
+        </div>
+        <ul class="cores" aria-label="Cores disponíveis">
+          <li style="background:#b99b6b"></li><li style="background:#27408b"></li><li style="background:#222222"></li>
+        </ul>
+        <h4 class="produto-nome">Short DV Masculino</h4>
+        <p class="produto-tipo">Short</p>
+        <p class="preco"><strong>R$ 64,90 no Pix</strong> <s>R$ 99,90</s> <span class="desconto">35% off</span></p>
+        <p class="nota"><span class="estrelas">★★★★★</span> <span class="nota-numero">4.5</span></p>
+      </article>
+
+      <article class="produto">
+        <div class="produto-imagem" style="--peca:#222222; --detalhe:#c9a14a;">
+          <svg class="peca-desenho" role="img" aria-label="Casaco preto"><use href="#casaco"/></svg>
+          <button class="favorito" type="button" aria-label="Favoritar">♡</button>
+        </div>
+        <ul class="cores" aria-label="Cores disponíveis">
+          <li style="background:#222222"></li><li style="background:#1f6b46"></li>
+        </ul>
+        <h4 class="produto-nome">Casaco DV Masculino</h4>
+        <p class="produto-tipo">Casaco</p>
+        <p class="preco"><strong>R$ 169,90 no Pix</strong> <s>R$ 249,90</s> <span class="desconto">32% off</span></p>
+        <p class="nota"><span class="estrelas">★★★★★</span> <span class="nota-numero">4.8</span></p>
+      </article>
+
+    </div>
+
+    <!-- ----- FEMININO ----- -->
+    <h3 class="grupo-titulo">👗 Feminino</h3>
+    <div class="produtos">
+
+      <article class="produto">
+        <div class="produto-imagem" style="--peca:#f3b6c4; --detalhe:#ffffff;">
+          <svg class="peca-desenho" role="img" aria-label="Camiseta rosé"><use href="#camiseta"/></svg>
+          <button class="favorito" type="button" aria-label="Favoritar">♡</button>
+        </div>
+        <ul class="cores" aria-label="Cores disponíveis">
+          <li style="background:#f3b6c4"></li><li style="background:#ffffff"></li><li style="background:#c9a14a"></li>
+        </ul>
+        <h4 class="produto-nome">Camiseta DV Feminina</h4>
+        <p class="produto-tipo">Camiseta</p>
+        <p class="preco"><strong>R$ 49,90 no Pix</strong> <s>R$ 89,90</s> <span class="desconto">44% off</span></p>
+        <p class="nota"><span class="estrelas">★★★★★</span> <span class="nota-numero">4.8</span></p>
+      </article>
+
+      <article class="produto">
+        <div class="produto-imagem" style="--peca:#d97b93; --detalhe:#ffffff;">
+          <svg class="peca-desenho" role="img" aria-label="Vestido rosé"><use href="#vestido"/></svg>
+          <button class="favorito" type="button" aria-label="Favoritar">♡</button>
+        </div>
+        <ul class="cores" aria-label="Cores disponíveis">
+          <li style="background:#d97b93"></li><li style="background:#222222"></li><li style="background:#1f6b46"></li>
+        </ul>
+        <h4 class="produto-nome">Vestido DV Midi</h4>
+        <p class="produto-tipo">Vestidos ou saias</p>
+        <p class="preco"><strong>R$ 109,90 no Pix</strong> <s>R$ 179,90</s> <span class="desconto">39% off</span></p>
+        <p class="nota"><span class="estrelas">★★★★★</span> <span class="nota-numero">4.7</span></p>
+      </article>
+
+      <article class="produto">
+        <div class="produto-imagem" style="--peca:#4a4a4a; --detalhe:#d97b93;">
+          <svg class="peca-desenho" role="img" aria-label="Calça cinza escura"><use href="#calca"/></svg>
+          <button class="favorito" type="button" aria-label="Favoritar">♡</button>
+        </div>
+        <ul class="cores" aria-label="Cores disponíveis">
+          <li style="background:#4a4a4a"></li><li style="background:#3b5b92"></li>
+        </ul>
+        <h4 class="produto-nome">Calça DV Feminina</h4>
+        <p class="produto-tipo">Calça</p>
+        <p class="preco"><strong>R$ 99,90 no Pix</strong> <s>R$ 169,90</s> <span class="desconto">41% off</span></p>
+        <p class="nota"><span class="estrelas">★★★★★</span> <span class="nota-numero">4.6</span></p>
+      </article>
+
+      <article class="produto">
+        <div class="produto-imagem" style="--peca:#efe6d8; --detalhe:#8a6a1f;">
+          <svg class="peca-desenho" role="img" aria-label="Short off-white"><use href="#short"/></svg>
+          <button class="favorito" type="button" aria-label="Favoritar">♡</button>
+        </div>
+        <ul class="cores" aria-label="Cores disponíveis">
+          <li style="background:#efe6d8"></li><li style="background:#3b5b92"></li>
+        </ul>
+        <h4 class="produto-nome">Short DV Feminino</h4>
+        <p class="produto-tipo">Short</p>
+        <p class="preco"><strong>R$ 54,90 no Pix</strong> <s>R$ 89,90</s> <span class="desconto">39% off</span></p>
+        <p class="nota"><span class="estrelas">★★★★★</span> <span class="nota-numero">4.5</span></p>
+      </article>
+
+      <article class="produto">
+        <div class="produto-imagem" style="--peca:#d8c4a0; --detalhe:#1a1a1a;">
+          <svg class="peca-desenho" role="img" aria-label="Casaco caramelo"><use href="#casaco"/></svg>
+          <button class="favorito" type="button" aria-label="Favoritar">♡</button>
+        </div>
+        <ul class="cores" aria-label="Cores disponíveis">
+          <li style="background:#d8c4a0"></li><li style="background:#222222"></li><li style="background:#d97b93"></li>
+        </ul>
+        <h4 class="produto-nome">Casaco DV Feminino</h4>
+        <p class="produto-tipo">Casaco</p>
+        <p class="preco"><strong>R$ 149,90 no Pix</strong> <s>R$ 229,90</s> <span class="desconto">35% off</span></p>
+        <p class="nota"><span class="estrelas">★★★★★</span> <span class="nota-numero">4.7</span></p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="rodape">
+    <div class="rodape-conteudo">
+      <div class="rodape-bloco">
+        <h3>👗 DV</h3>
+        <p>Moda com estilo para todos os momentos.</p>
+      </div>
+      <div class="rodape-bloco">
+        <h3>Horário</h3>
+        <p>Seg a Sáb, 9h às 19h</p>
+        <p>Atendimento também online</p>
+      </div>
+      <div class="rodape-bloco">
+        <h3>Contato</h3>
+        <p>📍 Brasília - DF</p>
+        <p>📱 Fale com nossa assistente</p>
+      </div>
+    </div>
+    <p class="rodape-copy">&copy; 2026 DV &middot; Atividade escolar</p>
+  </footer>
+
+  <script>
+    // Coração de favorito: clica para marcar e desmarcar
+    document.querySelectorAll('.favorito').forEach(function (botao) {
+      botao.addEventListener('click', function () {
+        var ativo = botao.classList.toggle('ativo');
+        botao.textContent = ativo ? '♥' : '♡';
+      });
+    });
+  </script>
+
+</body>
+</html>
